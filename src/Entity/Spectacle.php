@@ -140,4 +140,15 @@ class Spectacle
 
         return $this;
     }
+
+    public function __construct($pPic,$pPic2,$pPic3,$pPic4,$pTitre,$pDate,$pDescription)
+    {
+        $this->Pic = $pPic;
+        $this->Pic2 = $pPic2;
+        $this->Pic3 = $pPic3;
+        $this->Pic4 = $pPic4;
+        $this->Titre = $pTitre;
+        $this->Date = $pDate;
+        $this->Description = $pDescription;
+    }
 }
