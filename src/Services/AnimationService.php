@@ -13,11 +13,8 @@ class AnimationService
 
         $this->_entityManager = $em;
     }
-    public function getList(){
-
-        $this->_listeAnimation = $this->_entityManager
-        ->getRepository(Animation::class)
-        ->findall();
+    public function getListAnimation(){
+        $this->_listeAnimation = $this->_entityManager->getRepository(Animation::class)->findall();
 
         return $this->_listeAnimation;
     }

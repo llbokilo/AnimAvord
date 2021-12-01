@@ -13,11 +13,8 @@ class DecorationService
 
         $this->_entityManager = $em;
     }
-    public function getList(){
-
-        $this->_listeDecoration = $this->_entityManager
-        ->getRepository(Decoration::class)
-        ->findall();
+    public function getListDecoration(){
+        $this->_listeDecoration = $this->_entityManager->getRepository(Decoration::class)->findall();
 
         return $this->_listeDecoration;
     }

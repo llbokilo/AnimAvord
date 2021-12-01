@@ -13,11 +13,8 @@ class EvenementService
 
         $this->_entityManager = $em;
     }
-    public function getList(){
-
-        $this->_listeEvenement = $this->_entityManager
-        ->getRepository(Evenement::class)
-        ->findall();
+    public function getListEvenement(){
+        $this->_listeEvenement = $this->_entityManager->getRepository(Evenement::class)->findall();
 
         return $this->_listeEvenement;
     }

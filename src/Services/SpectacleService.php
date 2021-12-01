@@ -13,11 +13,8 @@ class SpectacleService
 
         $this->_entityManager = $em;
     }
-    public function getList(){
-
-        $this->_listeSpectacle = $this->_entityManager
-        ->getRepository(Spectacle::class)
-        ->findall();
+    public function getListSpectacle(){
+        $this->_listeSpectacle = $this->_entityManager->getRepository(Spectacle::class)->findall();
 
         return $this->_listeSpectacle;
     }
