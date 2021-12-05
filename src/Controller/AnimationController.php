@@ -24,12 +24,12 @@ class AnimationController extends AbstractController
     /**
      * @Route("/animation/list", name="liste_animation")
      */
-    public function list(AnimationController $animationService): Response{
+    public function list(AnimationService $animationService): Response{
         $listeAnimation = $animationService->getListAnimation();
         return $this->render('animation/list.html.twig',['animationList'=>$listeAnimation]);
     }
 
-     /**
+    /**
      * @Route("animation/create","animation_creation")
      */
     public function newAnimation(Request $request,AnimationService $animationService):Response

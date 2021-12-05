@@ -24,7 +24,7 @@ class SpectacleController extends AbstractController
     /**
      * @Route("/spectacle/list", name="liste_spectacle")
      */
-    public function list(SpectacleController $spectacleService): Response{
+    public function list(SpectacleService $spectacleService): Response{
         $listeSpectacle = $spectacleService->getListSpectacle();
         return $this->render('spectacle/list.html.twig',['spectacleList'=>$listeSpectacle]);
     }

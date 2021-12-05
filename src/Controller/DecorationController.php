@@ -24,7 +24,7 @@ class DecorationController extends AbstractController
     /**
      * @Route("/decoration/list", name="liste_decoration")
      */
-    public function list(DecorationController $decorationService): Response{
+    public function list(DecorationService $decorationService): Response{
         $listeDecoration = $decorationService->getListDecoration();
         return $this->render('decoration/list.html.twig',['decorationList'=>$listeDecoration]);
     }

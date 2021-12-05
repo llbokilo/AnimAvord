@@ -24,7 +24,7 @@ class EvenementController extends AbstractController
     /**
      * @Route("/evenement/list", name="liste_evenement")
      */
-    public function list(EvenementController $evenementService): Response{
+    public function list(EvenementService $evenementService): Response{
         $listeEvenement = $evenementService->getListEvenement();
         return $this->render('evenement/list.html.twig',['evenementList'=>$listeEvenement]);
     }
