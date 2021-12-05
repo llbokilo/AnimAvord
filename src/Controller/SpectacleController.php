@@ -63,7 +63,7 @@ class SpectacleController extends AbstractController
     public function show($pId, SpectacleService $spectacleService):Response
     {
         $spectacle = $spectacleService->getSpectacle($pId);
-        return $this->render('aniamtion/spectacle.html.twig',['spectacle'=>$spectacle['spectacle']]);
+        return $this->render('spectacle/spectacle.html.twig',['spectacle'=>$spectacle['spectacle']]);
     }
 
     /**

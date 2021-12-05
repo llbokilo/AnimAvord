@@ -63,7 +63,7 @@ class EvenementController extends AbstractController
     public function show($pId, EvenementService $evenementService):Response
     {
         $evenement = $evenementService->getEvenement($pId);
-        return $this->render('aniamtion/evenement.html.twig',['evenement'=>$evenement['evenement']]);
+        return $this->render('evenement/evenement.html.twig',['evenement'=>$evenement['evenement']]);
     }
 
     /**

@@ -63,7 +63,7 @@ class AnimationController extends AbstractController
     public function show($pId, AnimationService $animationService):Response
     {
         $animation = $animationService->getAnimation($pId);
-        return $this->render('aniamtion/animation.html.twig',['animation'=>$animation['animation']]);
+        return $this->render('animation/animation.html.twig',['animation'=>$animation['animation']]);
     }
 
     /**

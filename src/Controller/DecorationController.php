@@ -63,7 +63,7 @@ class DecorationController extends AbstractController
     public function show($pId, DecorationService $decorationService):Response
     {
         $decoration = $decorationService->getDecoration($pId);
-        return $this->render('aniamtion/decoration.html.twig',['decoration'=>$decoration['decoration']]);
+        return $this->render('decoration/decoration.html.twig',['decoration'=>$decoration['decoration']]);
     }
 
     /**
