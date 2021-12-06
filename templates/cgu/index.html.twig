@@ -1,20 +1,200 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CguController!{% endblock %}
+{% block title %}Anim'Avord{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .body{
+            background-color: white;
+        }
+        .bandeau_bleu{
+            background-color: lightblue;
+        }
+        .arrange{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        .normal{
+            font-size: 18px;
+        }
+        .gras{
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/llbok/OneDrive/Documents/DevWeb/Stage/AnimAvord/src/Controller/CguController.php'|file_link(0) }}">src/Controller/CguController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/llbok/OneDrive/Documents/DevWeb/Stage/AnimAvord/templates/cgu/index.html.twig'|file_link(0) }}">templates/cgu/index.html.twig</a></code></li>
-    </ul>
-</div>
+        .grassouligne{
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: underline;
+        }
+
+        .box{
+            margin-right:500px;
+            text-align:justify;
+        }
+
+        .grasgrand{
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+
+        .basdepage{
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+
+    <div class="body">
+        <h1 class="arrange bandeau_bleu"><a href="/">Accueil</a><a href="/evenement/list">Evènements</a><a href="/decoration/list">Décorations</a> 
+            <img src={{asset('Pics/large.png')}} height="100" width="300"/> <a href="/animation/list">Animations</a>
+            <a href="/spectacle/list">Spectacles</a><a href="/connexion">Connexion</a>
+        </h1>
+        
+        <div>
+            <div class="grasgrand">Conditions générales d'utilisation:</div>
+            </br>
+            </br>
+            <div class="gras">En utilisant et en parcourant ce site, vous acceptez de vous conformer aux présentes 
+                conditions d’utilisations.
+            </div>
+            </br>
+            <div class="grassouligne">ACCES AU SITE ET CONTENU:</div>
+            </br>
+            <div class="normal box">L’accès au site web est libre.</br></br>L'utilisateur du site web reconnaît disposer de la 
+                compétence et des moyens nécessaires pour accéder et utiliser ce site, et avoir vérifié que la configuration 
+                informatique utilisée ne contient aucun virus et qu'elle est en parfait état de fonctionnement.</br></br>Anim'Avord 
+                met tout en œuvre pour offrir aux utilisateurs des informations ou des outils disponibles et vérifiés mais ne saurait
+                 être tenu pour responsable des erreurs, d'une absence de disponibilité des fonctionnalités ou de la présence de 
+                 virus sur son site.</br></br>Le site web est accessible 24 heures sur 24 et 7 jours sur 7. L'éditeur du site web 
+                 ne saurait toutefois, être tenu pour responsable des discontinuités du site et de ses services, qu'elles soient 
+                 volontaires ou non. En outre, pour des raisons de maintenance, l'éditeur du site web pourra interrompre son site 
+                 et s'efforcera d'en avertir préalablement les utilisateurs. Les informations fournies par l'éditeur du site web 
+                 le sont à titre indicatif et ne sauraient dispenser l'utilisateur d'une analyse complémentaire et personnalisée. 
+                 L'éditeur du site web ne saurait garantir l'exactitude, la complétude, l'actualité des informations diffusées sur 
+                 son site.</br></br>Les renseignements qui apparaissent sur le site sont fournis à titre de renseignements généraux. 
+                 Ils ne sont, en aucune manière, des avis ou des conseils juridiques destinés à quiconque ni à une quelconque 
+                 utilisation et ne doivent pas être considérés comme tels. En conséquence, l'utilisateur reconnaît utiliser ces 
+                 informations sous sa responsabilité exclusive.</br></br>L'utilisateur s'engage à n'utiliser les services du site 
+                 ainsi que l'ensemble des informations auxquelles il pourra avoir accès que pour des raisons personnelles et dans 
+                 un but conforme à l'ordre public, aux bonnes mœurs et aux droits des tiers.</br></br>L'utilisateur s'engage à ne 
+                 commettre aucun acte pouvant mettre en cause la sécurité informatique du site web ou du système informatique des 
+                 autres utilisateurs, à ne pas interférer ou interrompre le fonctionnement normal du site.</br></br>L'utilisateur 
+                 s'engage à ne commettre aucun acte pour des raisons commerciales, politiques, de publicité et toute forme de 
+                 sollicitation commerciale et notamment l'envoi de courriers électroniques non sollicités.</br></br>L'utilisateur 
+                 s'engage à ne pas collecter, utiliser, ou effectuer un traitement quelconque des données personnelles des autres
+                  utilisateurs. Il s'engage, lorsque cela lui est demandé à ne renseigner que des informations le concernant, 
+                  complètes, exactes et à jour.
+            </div>
+            </br>
+            <div class="grassouligne">DONNEES PERSONNELLES:</div>
+            </br>
+            <div class="normal box">Pour connaitre vos droits et disposer des informations sur la manière dont vos données sont 
+                traitées, <a href="/ppd">cliquez ici.</a></div>
+            </br>
+            <div class="grassouligne">COOKIES:</div>
+            </br>
+            <div class="normal box">Pour en savoir plus sur la gestion de vos cookies, <a href="/pol_cookies">cliquez ici.</a></div>
+            </br>
+            <div class="grassouligne">PROPRIETE INTELLECTUELLE:</div>
+            </br>
+            <div class="normal box">Les photographies, textes, logos, pictogrammes, ainsi que toutes œuvres intégrées dans le site
+                sont la propriété de France loire ou de tiers ayant autorisé à les utiliser par l’intermédiaire d’une licence.</br></br>
+                Toute représentation totale ou partielle du contenu du site Internet www.franceloire.fr ou d’un des éléments qui 
+                le composent sans l’autorisation expresse de Anim'Avord est interdite et constituerait une contrefaçon sanctionnée 
+                par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Votre demande peut être adressée 
+                à : animavord@gmail.com</br></br>Les reproductions, les transmissions, les modifications, les réutilisations, sur 
+                un support papier ou informatique, dudit site et des œuvres qui y sont reproduites ne sont autorisées que pour un 
+                usage personnel et privé conforme aux dispositions de l’article L122-5 du Code de la Propriété Intellectuelle. 
+                Ces reproductions devront ainsi notamment indiquer clairement la source et l’auteur du site et/ou de ces œuvres 
+                multimédias.</br></br>En aucun cas ces reproductions ne sauraient porter préjudice aux droits des tiers.</br></br>Les 
+                reproductions, les transmissions, les modifications, les réutilisations à des fins publicitaires, commerciales 
+                ou d’information, de tout ou partie du site, sont totalement interdites.</br></br>Le logo de Anim'Avord ne peut 
+                être modifié – proportions, couleurs, éléments, constituants – et ne peut être sujet à aucune transformation, 
+                animation ou tout autre processus.</br></br>Toute personne ne respectant pas les dispositions légales applicables 
+                se rend coupable du délit de contrefaçon et est passible des sanctions pénales prévues par la loi.</br></br>Les 
+                autres signes distinctifs, notamment les dénominations sociales, noms commerciaux, enseignes, noms de domaine 
+                reproduits sur le portail www.animavord.fr sont la propriété de Anim'Avord ou des tiers et toute reproduction 
+                sans autorisation expresse est susceptible de constituer une usurpation engageant la responsabilité de son auteur 
+                sur le fondement de l'article 1240 du Code civil.
+            </div>
+            </br>
+            <div class="grassouligne">DROIT DES BASES DE DONNEES:</div>
+            </br>
+            <div class="normal box">Les bases de données figurant sur le portail www.animavord.fr sont protégées par les 
+                dispositions de l’article L.341-1 et suivants du Code de la propriété intellectuelle et est sanctionnée toute 
+                extraction ou réutilisation qualitativement ou quantitativement substantielle du contenu des bases de données.
+            </div>
+            </br>
+            <div class="grassouligne">CREDIT PHOTOGRAPHIQUE:</div>
+            </br>
+            <div class="normal box">Les photos présentes sur ce site proviennent de la photothèque de Anim'Avord.</br>Tous les droits 
+                de reproduction sont réservés, y compris à l’égard des documents téléchargeables et des représentations iconographiques
+                et photographiques : Renaud BARON.
+            </div>
+            </br>
+            <div class="grassouligne">ETABLISSEMENT DES LIENS:</div>
+            </br>
+            <div class="normal box">Anim'Avord autorise la mise en place d’un lien hypertexte vers son site www.animavord.fr pour 
+                tous les sites Internet, à l’exclusion de ceux diffusant des informations à caractère polémique, pornographique, 
+                xénophobe ou pouvant dans une plus large mesure porter atteinte à la sensibilité du plus grand nombre.</br></br>Le 
+                lien doit aboutir à la page d’accueil du site (home page) et le site www.animavord.fr doit apparaître dans une 
+                nouvelle fenêtre. Les pages du site www.animavord.fr ne doivent en aucun cas être intégrées à l’intérieur des 
+                pages d’un autre site (Frame). Sauf autorisation spécifique qui pourra être accordée au cas par cas, un lien 
+                direct vers une page interne au site est interdit. La demande d’établissement de lien hypertexte à partir 
+                du site www.animavord.fr, doit être faite par mail à : animavord@gmail.com</br></br>Dans tous les cas d’espèce, 
+                Anim'Avord se réserve le droit de demander la suppression d’un lien si elle estime que le site cible ne respecte 
+                pas les règles ainsi définies. Les liens hypertextes mis en œuvre au sein du site en direction d’autres sites et/ou 
+                de pages personnelles et d’une manière générale vers toutes ressources existantes sur internet ne sauraient engager 
+                la responsabilité de Anim'Avord quant aux liens qu’ils contiennent ou aux changements ou mises à jour qui leur sont 
+                apportés.
+            </div>
+            </br>
+            <div class="grassouligne">RESPONSABILITE ANIM'AVORD:</div>
+            </br>
+            <div class="normal box">Les données mises en ligne sur le site Internet de Anim'Avord n’ont pas d’autre visée que 
+                d’informer sur nos activités. Leur exactitude est périodiquement contrôlée et leur mise à jour est en tant que 
+                de besoin assurée. Des erreurs ou omissions indépendantes de la volonté de Anim'Avord peuvent toutefois se glisser
+                 dans les pages de son site. Nous remercions les utilisateurs du site de nous faire part d’éventuelles omissions, 
+                 erreurs ou corrections par courriel sur la boite aux lettres animavord@gmail.com</br></br>En tout état de cause, 
+                 la responsabilité de Anim'Avord ne saurait être retenue en cas de préjudice direct ou indirect 
+                 (notamment tout préjudice financier, commercial, perte de programmes ou de données) résultant de l’usage de son site
+                  et de l’utilisation des données et informations qui y sont mises en ligne.</br></br>En particulier, 
+                  Anim'Avord décline toute responsabilité à l’égard de tout dommage lié à l’utilisation des liens hypertextes mis 
+                  en ligne sur son site et à la consultation des sites auxquels ils renvoient.</br></br>Il est expressément rappelé
+                   que Anim'Avord n’a aucun contrôle ni aucune responsabilité sur le contenu de ces sites. Il incombe donc à 
+                   chaque internaute de prendre les précautions nécessaires afin de s’assurer que le site sélectionné pour son usage
+                    n’est pas infesté de virus, cheval de Troie ou autre parasite de nature destructive.
+            </div>
+            </br>
+            <div class="grassouligne">MODIFICATION:</div>
+            </br>
+            <div class="normal box">Anim'Avord se réserve le droit de modifier le contenu de la présente notice légale à tout moment
+                 et sans préavis.</br>L’utilisateur est donc invité à la consulter régulièrement.</br>Dernière version
+                  : Novembre 2021</div>
+            </br>
+        </div>
+
+        <div class="bandeau_bleu">
+            <div  class="arrange">
+                <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
+                <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
+                <div class="gras arrange">Suivez-nous:<a href="https://www.facebook.com/AnimAvord/">
+                    <img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+                </div>
+            </div>
+            <div class="arrange normal"><a href="/contact">Contact</a><a href="/espace_presse">Espace presse</a><a href="mentions_legales/">Mentions légales</a>
+                <a href="cgu/">Conditions générales d'utilisation</a><a href="pol_cookies/">Politique cookies</a>
+                <a href="/gest_cookies">Gestion cookies</a><a href="/ppd">Politique de protection des données</a>
+            </div>
+        </div>
+
+        <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
+    </div>
 {% endblock %}
+
+

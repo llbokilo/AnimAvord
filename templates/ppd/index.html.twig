@@ -1,20 +1,94 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PpdController!{% endblock %}
+{% block title %}Anim'Avord{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .body{
+            background-color: white;
+        }
+        .bandeau_bleu{
+            background-color: lightblue;
+        }
+        .arrange{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        .normal{
+            font-size: 18px;
+        }
+        .gras{
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/llbok/OneDrive/Documents/DevWeb/Stage/AnimAvord/src/Controller/PpdController.php'|file_link(0) }}">src/Controller/PpdController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/llbok/OneDrive/Documents/DevWeb/Stage/AnimAvord/templates/ppd/index.html.twig'|file_link(0) }}">templates/ppd/index.html.twig</a></code></li>
-    </ul>
-</div>
+        .grassouligne{
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: underline;
+        }
+
+        .box{
+            margin-right:500px;
+            text-align:justify;
+        }
+
+        .grasgrand{
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+
+        .basdepage{
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+
+    <div class="body">
+        <h1 class="arrange bandeau_bleu"><a href="/">Accueil</a><a href="/evenement/list">Evènements</a><a href="/decoration/list">Décorations</a> 
+            <img src={{asset('Pics/large.png')}} height="100" width="300"/> <a href="/animation/list">Animations</a>
+            <a href="/spectacle/list">Spectacles</a><a href="/connexion">Connexion</a>
+        </h1>
+        
+        <div>
+            <div class="grasgrand">Politique de protection des données personnelles:</div>
+            </br>
+            </br>
+            <div class="normal box">Dans le cadre de ses activités d'association, Anim'Avord est amenée à collecter et à traiter 
+                des données à caractère personnelles relatives notamment aux demandeurs de logement, aux locataires et aux 
+                résidents, appelés les personnes concernées dans la suite de ce document. Nous vous communiquons ci-après les 
+                informations nécessaires à la bonne compréhension du traitement de vos données personnelles, ainsi qu’à 
+                l’exercice de vos droits.</br></br>Anim'Avord ne collecte vos données (nom, prénom, adresse, téléphone) que dans 
+                les buts, soit, de vous enregistrer comme bénévole afin d'aider aux différentes activités, soit, vous enregistrer 
+                comme participants aux différentes activités, afin également de pouvir vous faire participer aux tirages aux sorts 
+                si vous êtes participant.</br></br>Ces données sont consultables sur simple demande, ne sont conservées que le 
+                temps de l'évènement où vous êtes inscrit et vous pouvez vous opposer à leur enregistrement.
+            </div>
+            </br>
+            </br>
+        </div>
+
+        <div class="bandeau_bleu">
+            <div  class="arrange">
+                <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
+                <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
+                <div class="gras arrange">Suivez-nous:<a href="https://www.facebook.com/AnimAvord/">
+                    <img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+                </div>
+            </div>
+            <div class="arrange normal"><a href="/contact">Contact</a><a href="/espace_presse">Espace presse</a><a href="mentions_legales/">Mentions légales</a>
+                <a href="cgu/">Conditions générales d'utilisation</a><a href="pol_cookies/">Politique cookies</a>
+                <a href="/gest_cookies">Gestion cookies</a><a href="/ppd">Politique de protection des données</a>
+            </div>
+        </div>
+
+        <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
+    </div>
 {% endblock %}
+
+

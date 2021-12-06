@@ -1,20 +1,126 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PolCookiesController!{% endblock %}
+{% block title %}Anim'Avord{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <style>
+        .body{
+            background-color: white;
+        }
+        .bandeau_bleu{
+            background-color: lightblue;
+        }
+        .arrange{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        .normal{
+            font-size: 18px;
+        }
+        .gras{
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/llbok/OneDrive/Documents/DevWeb/Stage/AnimAvord/src/Controller/PolCookiesController.php'|file_link(0) }}">src/Controller/PolCookiesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/llbok/OneDrive/Documents/DevWeb/Stage/AnimAvord/templates/pol_cookies/index.html.twig'|file_link(0) }}">templates/pol_cookies/index.html.twig</a></code></li>
-    </ul>
-</div>
+        .grassouligne{
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: underline;
+        }
+
+        .box{
+            margin-right:500px;
+            text-align:justify;
+        }
+
+        .grasgrand{
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: underline;
+        }
+
+
+        .basdepage{
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+
+    <div class="body">
+        <h1 class="arrange bandeau_bleu"><a href="/">Accueil</a><a href="/evenement/list">Evènements</a><a href="/decoration/list">Décorations</a> 
+            <img src={{asset('Pics/large.png')}} height="100" width="300"/> <a href="/animation/list">Animations</a>
+            <a href="/spectacle/list">Spectacles</a><a href="/connexion">Connexion</a>
+        </h1>
+        
+        <div>
+            <div class="grasgrand">Politique cookies:</div>
+            </br>
+            </br>
+            <div class="grassouligne">Préambule:</div>
+            </br>
+            <div class="normal box"></div>
+            </br>
+            <div class="grassouligne">1. Définition des cookies:</div>
+            </br>
+            <div class="normal box">Un cookie est une information (petit fichier texte) déposée sur votre ordinateur, votre 
+                téléphone ou tout autre dispositif similaire.</br></br>Le cookie ou le traceur est déposé et lu lors de la 
+                consultation du Site Internet par l’utilisateur. Il est utilisé pour envoyer des informations au navigateur de 
+                l’utilisateur et permettre à cet utilisateur de renvoyer des informations au site d’origine.</br></br>Seul l’émetteur
+                 d’un cookie peut lire ou modifier les informations qui y sont contenues.</br></br>Le terme cookies recouvre plusieurs
+                  technologies comme notamment les pixels invisibles ou « web bugs ».</br></br>Vous êtes informés que lors de vos 
+                  visites sur notre Site, des cookies et autres traceurs peuvent être installés ou servir à accéder à des 
+                  informations contenues sur votre équipement (tablettes, smartphone, ordinateur…).
+            </div>
+            </br>
+            <div class="grassouligne">2. Les cookies de session et les cookies permanents:</div>
+            </br>
+            <div class="normal box">Il existe différents types de cookies : Cookies de session et cookies permanents.</br></br>
+                Les cookies de session disparaissent dès que vous quittez le site tandis que les cookies permanents demeurent sur votre 
+                terminal jusqu’à expiration de leur durée de vie, au maximum 13 mois ou jusqu’à ce que vous les supprimiez à 
+                l’aide des fonctionnalités de votre navigateur. Les données traitées via les cookies sont conservées pour une 
+                durée maximale de 25 mois.
+            </div>
+            </br>
+            <div class="grassouligne">3. Consentement:</div>
+            </br>
+            <div class="normal box">Lors de votre première visite sur le site, il vous est proposé d’accepter ou de refuser 
+                l’utilisation de certains cookies via un bandeau qui vous permet d’accéder à cette politique notamment.</br></br>Si 
+                vous ne souhaitez pas que des cookies soient installés ou lus sur votre équipement terminal, un cookie de refus sera 
+                déposé sur votre équipement, afin que de nous permettre d’enregistrer l’information selon laquelle vous vous êtes 
+                opposé à l’utilisation de cookies. Si vous supprimez ce cookie de refus, il ne sera plus possible de vous identifier 
+                comme ayant refusé l’utilisation de cookies.</br></br>De même, lorsque vous acceptez le recours aux cookies, un 
+                cookie de consentement est installé. Il vous est toujours possible de retirer votre consentement à tout moment.</br>
+                </br>Tous les cookies ne sont pas soumis au recueil du consentement. Les cookies qui ont pour finalité exclusive de 
+                permettre ou faciliter la communication par voie électronique ou qui sont strictement nécessaires à la fourniture 
+                d'un service de communication en ligne à la demande expresse de l'utilisateur ne sont pas soumis au consentement.</br>
+                </br>Il est également possible de consentir indépendamment et spécifiquement pour chaque finalité distincte, 
+                via l’option « personnaliser mes choix de cookies ». Le simple fait de continuer la navigation sans cliquer sur 
+                l’une des options proposées par ce bandeau cookies s’apparente à un refus de consentement.</br></br>Les cookies 
+                de consentement ou de refus doivent rester sur l’équipement terminal. Ils sont conservés pendant 13 mois maximum.
+            </div>
+            </br>
+            </br>
+        </div>
+
+        <div class="bandeau_bleu">
+            <div  class="arrange">
+                <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
+                <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
+                <div class="gras arrange">Suivez-nous:<a href="https://www.facebook.com/AnimAvord/">
+                    <img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+                </div>
+            </div>
+            <div class="arrange normal"><a href="/contact">Contact</a><a href="/espace_presse">Espace presse</a><a href="mentions_legales/">Mentions légales</a>
+                <a href="cgu/">Conditions générales d'utilisation</a><a href="pol_cookies/">Politique cookies</a>
+                <a href="/gest_cookies">Gestion cookies</a><a href="/ppd">Politique de protection des données</a>
+            </div>
+        </div>
+
+        <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
+    </div>
 {% endblock %}
+
+
