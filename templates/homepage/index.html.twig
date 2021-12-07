@@ -6,121 +6,49 @@
     <script src="/assets/script.js" async></script>
 
     <style>
-        .body{
-            background-color:white;
-        }
-        .bandeau_bleu{
-            background-color:lightblue;
-        }
-
-        .arrange{
-            display:flex;
-            justify-content:space-around;
-            align-items:center;
-        }
-
-        .prez{
-            display:flex;
-            justify-content:space-around;
-        }
-
-        .normal{
-            font-size: 18px;
-        }
-
-        .fond1{
-            display:flex;
-            background-color:lightyellow;
-            text-align:justify;
-        }
-
-        .fond2{
-            display:flex;
-            background-color:lightgreen;
-            text-align:justify;
-        }
-
-        .fond2b{
-            display:flex;
-            background-color:lightgreen;
-            text-align:justify;
-            justify-content:space-around;
-        }
-
-        .fond3{
-            display:flex;
-            background-color:lightgrey;
-            text-align:justify;
-        }
-
-        .gras{
-            font-weight:bold;
-            font-size:18px;
-        }
-
-        .grassouligne{
-            font-weight:bold;
-            font-size:18px;
-            text-decoration:underline;
-        }
-
-        .box{
-            margin-right:500px;
-            text-align:justify;
-        }
-
-        .boxacceuil{
-            width:450px;
-            padding-bottom:20px;
-        }
-
-        .grasgrand{
-            font-weight:bold;
-            font-size: 30px;
-            text-decoration:underline;
-        }
-
-        .basdepage{
-            font-weight:bold;
-            text-align:center;
-            font-size:20px;
-        }
-
-        .fondnoir{
-            display:flex;
-            justify-content: center;
-            flex-direction: column;
-        }
+        .normal{font-size: 18px;}
+        .bandeaubleu{background-color:lightblue;align-items:center;}
+        .fond1{display:flex;background-color:lightyellow;text-align:justify;}
+        .fond2{display:flex;background-color:lightgreen;text-align:justify;}
+        .fond2b{display:flex;background-color:lightgreen;text-align:justify;justify-content:space-around;}
+        .fond3{display:flex;background-color:lightgrey;text-align:justify;}
+        .gras{font-weight:bold;font-size:18px;}
+        .grassouligne{font-weight:bold;font-size:18px;text-decoration:underline;}
+        .box{margin-right:500px;text-align:justify;}
+        .boxacceuil{width:450px;padding-bottom:20px;}
+        .grasgrand{font-weight:bold;font-size:30px;text-decoration:underline;}
+        .basdepage{font-weight:bold;text-align:center;font-size:20px;}
+        .fondnoir{display:flex;justify-content:center;flex-direction:column;}
 
         /*Le slideshow*/
 
         /* Slideshow container */
         .slideshow-container {
-        max-width:1000px;
-        position:relative;
-        margin:auto;
-        background-color:#795548;
+            width:1000px;
+            position:relative;
+            margin:auto;
+            background-color:#795548;
         }
 
         /* Hide the images by default */
         .mySlides {
-        display: none;
+            display: none;
         }
 
         /* Next & previous buttons */
         .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        margin-top: -22px;
-        padding: 16px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
         }
 
         /* Position the "next button" to the right */
@@ -169,43 +97,31 @@
         }
     </style>
 
-    <div class="body">
-        <h1 class="arrange bandeau_bleu"><a href="/">Accueil</a><a href="/evenement/list">Evènements</a><a href="/decoration/list">Décorations</a> 
-            <img src={{asset('Pics/large.png')}} height="100" width="300"/> <a href="/animation/list">Animations</a>
-            <a href="/spectacle/list">Spectacles</a><a href="/connexion">Connexion</a>
-        </h1>
-        
-        <div class="fondnoir">
-            <!-- Slideshow container -->
-            <div class="slideshow-container">
 
-                <div class="mySlides fade display:flex">                
-                <img src="Pics/halloween.png" style="width:30%">
-                </div>
-            
-                <div class="mySlides fade">
-                <img src="Pics/halloween2.jpg" style="width:30%">
-                </div>
-            
-                <div class="mySlides fade">
-                <img src="Pics/halloween3.jpg" style="width:30%">
-                </div>
-            
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
+    <h1 class="bandeaubleu">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="/evenement/list">Evènements</a></li>
+            <li class="nav-item"><a class="nav-link" href="/decoration/list">Décorations</a></li>
+            <li class="nav-item"><img src={{asset('Pics/large.png')}} height="100" width="300"/></li>
+            <li class="nav-item"><a class="nav-link" href="/animation/list">Animations</a></li>
+            <li class="nav-item"><a class="nav-link" href="/spectacle/list">Spectacles</a></li>
+            {# {% if is_granted('ROLE_ADMIN') %}                   
+            <li class="nav-item"><a class="nav-link" href="/admin/blog/message/">Administration</a></li>
+            {% endif %}
+            {% if app.user %}
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">register</a></li>
+            {% endif %} #}
+        </ul>
+    </h1>
         
-            <!-- The dots/circles -->
-            <div style="text-align:center; background-color:white; margin-top:5px">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-        </div>
+    <div>CAROUSEL!!!</div>
 
-        <div class="prez">
-            <div class="boxacceuil">
+    <div class="row">
+            <div class="col-sm-4">
                 <div class="gras fond1">QUI SOMMES-NOUS?</div>
                 <div class="normal fond1">
                     </br>Proin venenatis nisl neque, ut dignissim quam auctor vitae.</br></br>
@@ -216,10 +132,10 @@
                      Phasellus viverra, nisl at pharetra pretium, lacus elit luctus risus, at luctus lacus libero a diam.</br></br>
                      Quisque sagittis tortor eu sem interdum, ut malesuada odio consequat. Donec eu magna a est tincidunt placerat 
                      a vel ligula. Phasellus venenatis, magna vitae blandit feugiat, elit libero facilisis libero, sit amet bibendum 
-                     magna metus id lacus. Pellentesque pulvinar justo sit amet nunc laoreet, blandit consectetur dolor.</br></br>
+                     magna metus id lacus. Pellentesque pulvinar justo sit amet nunc laoreet, blandit consectetur dolor.
                 </div>
-            </div>
-            <div class="boxacceuil">
+        </div>
+        <div class="col-sm-4">
                 <div class="gras fond2">AVORD</div>
                 <div class="gras fond2"></br></div>
                 <div class="fond2b"><img src={{asset('Pics/avord.jpg')}} height="150" width="400"/></div>
@@ -232,8 +148,8 @@
                     urna erat dapibus ex, id fringilla nunc nulla vitae erat. Ut ultrices nulla turpis, id viverra purus sagittis vel.
                      Phasellus luctus sagittis lacus et posuere.
                 </div>
-            </div>
-            <div class="boxacceuil">
+        </div>
+        <div class="col-sm-4">
                 <div class="gras fond3">NOS AMBITIONS</div>
                 <div class="normal fond3">
                     </br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum finibus nisl, vitae porttitor 
@@ -244,25 +160,32 @@
                      elit iaculis. Proin commodo lorem bibendum neque posuere fermentum.</br></br> Sed augue risus, sollicitudin
                       eget scelerisque eget, eleifend sit amet enim. Vestibulum sit amet nisi vestibulum, porttitor tellus
                        luctus, rhoncus metus.</br></br>Aliquam id lacinia dolor, in varius quam.</br></br>Proin sapien purus, 
-                       laoreet sed rutrum vitae, varius a dui. Maecenas vitae mollis urna. Maecenas vitae mollis urna.</br></br></br>
+                       laoreet sed rutrum vitae, varius a dui. Maecenas vitae mollis urna. Maecenas vitae mollis urna.</br>
                 </div>
-            </div>
         </div>
-
-        <div class="bandeau_bleu">
-            <div  class="arrange">
-                <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
-                <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
-                <div class="gras arrange">Suivez-nous:<a href="https://www.facebook.com/AnimAvord/">
-                    <img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
-                </div>
-            </div>
-            <div class="arrange normal"><a href="/contact">Contact</a><a href="/espace_presse">Espace presse</a><a href="mentions_legales/">Mentions légales</a>
-                <a href="cgu/">Conditions générales d'utilisation</a><a href="pol_cookies/">Politique cookies</a>
-                <a href="/gest_cookies">Gestion cookies</a><a href="/ppd">Politique de protection des données</a>
-            </div>
-        </div>
-
-        <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
     </div>
+
+    <div class="bandeaubleu row">
+        <div class="col-sm-4">
+            <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
+        </div>
+        <div class="col-sm-4">
+            <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
+        </div>
+        <div class="col-sm-4">
+            Suivez-nous:  <a href="https://www.facebook.com/AnimAvord/"><img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+        </div>
+    </div>
+        
+    <ul class="nav bandeaubleu justify-content-sm-center">
+        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="/espace_presse">Espace presse</a></li>
+        <li class="nav-item"><a class="nav-link" href="/mentions_legales">Mentions légales</a></li>
+        <li class="nav-item"><a class="nav-link" href="/cgu">Conditions générales d'utilisation</a></li>
+        <li class="nav-item"><a class="nav-link" href="/pol_cookies">Politique cookies</a></li>
+        <li class="nav-item"><a class="nav-link" href="/gest_cookies">Gestion cookies</a></li>
+        <li class="nav-item"><a class="nav-link" href="/ppd">Politique de protection des données</a></li>
+    </ul>
+
+    <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
 {% endblock %}
