@@ -32,12 +32,44 @@ class ActiviteController extends AbstractController
     }
 
     /**
+     * @Route("/activite/animation", name="liste_activite_animation")
+     */
+    public function listAnimation(ActiviteService $activiteService): Response{
+        $listeActivite = $activiteService->getListActiviteAnimation();
+        return $this->render('activite/list_animation.html.twig',['activiteList'=>$listeActivite]);
+    }
+
+    /**
+     * @Route("/activite/decoration", name="liste_activite_decoration")
+     */
+    public function listDecoration(ActiviteService $activiteService): Response{
+        $listeActivite = $activiteService->getListActiviteDecoration();
+        return $this->render('activite/list_decoration.html.twig',['activiteList'=>$listeActivite]);
+    }
+
+    /**
+     * @Route("/activite/evenement", name="liste_activite_evenement")
+     */
+    public function listEvenement(ActiviteService $activiteService): Response{
+        $listeActivite = $activiteService->getListActiviteEvenement();
+        return $this->render('activite/list_evenement.html.twig',['activiteList'=>$listeActivite]);
+    }
+
+    /**
+     * @Route("/activite/spectacle", name="liste_activite_spectacle")
+     */
+    public function listSpectacle(ActiviteService $activiteService): Response{
+        $listeActivite = $activiteService->getListActiviteSpectacle();
+        return $this->render('activite/list_spectacle.html.twig',['activiteList'=>$listeActivite]);
+    }
+
+    /**
     * @Route("activite/{pId}","activite_show")
     */
-    public function show($pId, ActiviteService $animationService):Response
+    public function show($pId, ActiviteService $activiteService):Response
     {
-        $activite = $animationService->getActivite($pId);
-        return $this->render('activite/activite.html.twig',['activite'=>$activite['activite']]);
+        $activite = $activiteService->getActivite($pId);
+        return $this->render('activite/activite_detail.html.twig',['activite'=>$activite['activite']]);
     }
 
     /**
@@ -54,14 +86,15 @@ class ActiviteController extends AbstractController
      */
     public function newActivite(Request $request,ActiviteService $activiteService):Response
     {
-
-        $activite = new Activite('','','','','','','','');
+        $activite = new Activite('','','','','','','','','','');
         $form = $this->createFormBuilder($activite)
-        ->add('save', SubmitType::class, ['label' => 'Enregistrer'])
+            ->add('Type', TextType::class)
+            ->add('save', SubmitType::class, ['label' => 'Enregistrer'])
             ->getForm();
         $request = Request::createFromGlobals();
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid())
+        {
             $activite = $form->getData();
             $activiteService->addActivite($activite);
             return $this->render('activite/create_completed.html.twig',['activite'=>$activite]);

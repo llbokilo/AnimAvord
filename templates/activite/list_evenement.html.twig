@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Decorations{% endblock %}
+{% block title %}Activités{% endblock %}
 
 {% block body %}
 <style>
@@ -17,10 +17,10 @@
     .fond2b{display:flex;background-color:lightgreen;text-align:justify;justify-content:space-around;}
     .fond3{display:flex;background-color:lightgrey;text-align:justify;}
     .gras{font-weight:bold;font-size:18px;}
-    .grassouligne{font-weight:bold;font-size:18px;text-decoration:underline;}
+    .grassouligne{font-weight:bold;font-size:18px;text-animation:underline;}
     .box{margin-right:500px;text-align:justify;}
     .boxacceuil{width:450px;padding-bottom:20px;}
-    .grasgrand{font-weight:bold;font-size:30px;text-decoration:underline;}
+    .grasgrand{font-weight:bold;font-size:30px;text-animation:underline;}
     .basdepage{font-weight:bold;text-align:center;font-size:20px;}
     .fondnoir{display:flex;justify-content:center;flex-direction:column;}
 </style>
@@ -32,14 +32,11 @@
     </h1>
 
     <div class="example-wrapper">
-        {% for decoration in decorationList %}
-            <li>{{decoration.titre}}
-                <a href="/decoration/{{decoration.getId()}}"><button>Détails</button></a>
-                <a href="/decoration/delete/{{decoration.getId()}}"><button type="submit">Supprimer</button></a>
+        {% for activite in activiteList %}
+            <li>{{activite.titre}}
+                <a href="/activite/{{activite.getId()}}"><button>Détails</button></a>
             </li>
         {% endfor %}
-    </div>
-
     </div>
 
     <div class="bandeau_bleu">

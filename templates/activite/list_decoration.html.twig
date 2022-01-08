@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Animations{% endblock %}
+{% block title %}Activités{% endblock %}
 
 {% block body %}
 <style>
@@ -32,14 +32,11 @@
     </h1>
 
     <div class="example-wrapper">
-        {% for animation in animationList %}
-            <li>{{animation.titre}}
-                <a href="/animation/{{animation.getId()}}"><button>Détails</button></a>
-                <a href="/animation/delete/{{animation.getId()}}"><button type="submit">Supprimer</button></a>
+        {% for activite in activiteList %}
+            <li>{{activite.titre}}
+                <a href="/activite/{{activite.getId()}}"><button>Détails</button></a>
             </li>
         {% endfor %}
-    </div>
-
     </div>
 
     <div class="bandeau_bleu">
