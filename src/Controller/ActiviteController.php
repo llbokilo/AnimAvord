@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Activite;
+use app\Entity\TypeActivite;
 use App\Services\ActiviteService;
+use DateTime;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -68,9 +71,18 @@ class ActiviteController extends AbstractController
      */
     public function newActivite(Request $request,ActiviteService $activiteService):Response
     {
-        $activite = new Activite('','','','','','','','','','');
+        $activite = new Activite('','','','','','','', NULL,'',NULL);
         $form = $this->createFormBuilder($activite)
-            ->add('Type', TextType::class)
+            // ->add('typeActivite', TextType::class)
+            ->add('Titre', TextType::class)
+            //->add('Debut', DateType::class)
+            //->add('Fin', DateType::class)
+            //->add('Photo', TextType::class)
+            //->add('Histo', TextType::class)
+            //->add('Loterie', TextType::class)
+            ->add('Description', TextType::class)
+            //->add('Date_creation', DateType::class)
+            //->add('Utilisateur_creation', TextType::class)
             ->add('save', SubmitType::class, ['label' => 'Enregistrer'])
             ->getForm();
         $request = Request::createFromGlobals();
