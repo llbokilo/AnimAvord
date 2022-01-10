@@ -64,24 +64,6 @@ class ActiviteController extends AbstractController
     }
 
     /**
-    * @Route("activite/{pId}","activite_show")
-    */
-    public function show($pId, ActiviteService $activiteService):Response
-    {
-        $activite = $activiteService->getActivite($pId);
-        return $this->render('activite/activite_detail.html.twig',['activite'=>$activite['activite']]);
-    }
-
-    /**
-     * @Route("activite/delete/{pId}","activite_delete")
-     */
-    public function delete($pId, ActiviteService $activiteService):Response
-    {
-        $activiteService->delActivite($pId);
-        return $this->render('activite/delete_completed.html.twig');
-    }
-
-    /**
      * @Route("activite/create","activite_creation")
      */
     public function newActivite(Request $request,ActiviteService $activiteService):Response
@@ -100,6 +82,61 @@ class ActiviteController extends AbstractController
             return $this->render('activite/create_completed.html.twig',['activite'=>$activite]);
         }
         else
-            return $this->render('activite/creer.html.twig',['formulaire'=>$form->createView()]);
+            return $this->render('activite/creer.html.twig',['formulaire'=>$form->createView()]);     
     }
+
+    /**
+    * @Route("activite/{pId}","activite_show")
+    */
+    public function show($pId, ActiviteService $activiteService):Response
+    {
+        $activite = $activiteService->getActivite($pId);
+        return $this->render('activite/activite.html.twig',['activite'=>$activite['activite']]);
+    }
+
+    /**
+    * @Route("activite/animation/{pId}","activite_animation_show")
+    */
+    public function showAnimation($pId, ActiviteService $activiteService):Response
+    {
+        $activite = $activiteService->getActivite($pId);
+        return $this->render('activite/activite_animation.html.twig',['activite'=>$activite['activite']]);
+    }
+
+    /**
+    * @Route("activite/decoration/{pId}","activite_decoration_show")
+    */
+    public function showDecoration($pId, ActiviteService $activiteService):Response
+    {
+        $activite = $activiteService->getActivite($pId);
+        return $this->render('activite/activite_decoration.html.twig',['activite'=>$activite['activite']]);
+    }
+
+    /**
+    * @Route("activite/evenement/{pId}","activite_evenement_show")
+    */
+    public function showEvenement($pId, ActiviteService $activiteService):Response
+    {
+        $activite = $activiteService->getActivite($pId);
+        return $this->render('activite/activite_evenement.html.twig',['activite'=>$activite['activite']]);
+    }
+
+    /**
+    * @Route("activite/spectacle/{pId}","activite_spectacle_show")
+    */
+    public function showSpectacle($pId, ActiviteService $activiteService):Response
+    {
+        $activite = $activiteService->getActivite($pId);
+        return $this->render('activite/activite_spectacle.html.twig',['activite'=>$activite['activite']]);
+    }
+
+    /**
+     * @Route("activite/delete/{pId}","activite_delete")
+     */
+    public function delete($pId, ActiviteService $activiteService):Response
+    {
+        $activiteService->delActivite($pId);
+        return $this->render('activite/delete_completed.html.twig');
+    }
+
 }

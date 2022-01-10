@@ -6,44 +6,43 @@
     <script src="/assets/script.js" async></script>
 
     <style>
-        .normal{font-size: 18px;}
-        .bandeaubleu{background-color:lightblue;align-items:center;}
+        .normal{font-size:18px;}
+        .bandeaubleu{background-color:lightblue;margin-left:auto;margin-right:auto;}
         .fond1{display:flex;background-color:lightyellow;text-align:justify;}
         .fond2{display:flex;background-color:lightgreen;text-align:justify;}
         .fond2b{display:flex;background-color:lightgreen;text-align:justify;justify-content:space-around;}
         .fond3{display:flex;background-color:lightgrey;text-align:justify;}
         .gras{font-weight:bold;font-size:18px;}
-        .grassouligne{font-weight:bold;font-size:18px;text-decoration:underline;}
-        .box{margin-right:500px;text-align:justify;}
-        .boxacceuil{width:450px;padding-bottom:20px;}
-        .grasgrand{font-weight:bold;font-size:30px;text-decoration:underline;}
         .basdepage{font-weight:bold;text-align:center;font-size:20px;}
-        .fondnoir{display:flex;justify-content:center;flex-direction:column;}
     </style>
 
-    <h1 class="bandeaubleu">
-        <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
-            <li class="nav-item"><a class="nav-link" href="/activite/evenement">Evènements</a></li>
-            <li class="nav-item"><a class="nav-link" href="/activite/decoration">Décorations</a></li>
-            <li class="nav-item"><img src={{asset('Pics/large.png')}} height="100" width="300"/></li>
-            <li class="nav-item"><a class="nav-link" href="/activite/animation">Animations</a></li>
-            <li class="nav-item"><a class="nav-link" href="/activite/spectacle">Spectacles</a></li>
-            {# {% if is_granted('ROLE_ADMIN') %}                   
-            <li class="nav-item"><a class="nav-link" href="/admin/blog/message/">Administration</a></li>
-            {% endif %}
-            {% if app.user %}
-                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-            {% else %}
-                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="/register">register</a></li>
-            {% endif %} #}
-        </ul>
-    </h1>
-        
-    <div>CAROUSEL!!!</div>
+    <div class="container-fluid">
+        <h1 class="bandeaubleu">
+            <ul class="nav justify-content-sm-center">
+                <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="/activite/evenement">Evènements</a></li>
+                <li class="nav-item"><a class="nav-link" href="/activite/decoration">Décorations</a></li>
+                <li class="nav-item"><img src={{asset('Pics/large.png')}} height="100" width="300"/></li>
+                <li class="nav-item"><a class="nav-link" href="/activite/animation">Animations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/activite/spectacle">Spectacles</a></li>                   
+                <li class="nav-item"><a class="nav-link" href="/admin">Administration</a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Déconnexion</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Connexion</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">S'enregistrer</a></li>
+            </ul>
+        </h1>
+    </div>
 
-    <div class="row">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <p class="text-center">CAROUSEL!!!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-sm-4">
                 <div class="gras fond1">QUI SOMMES-NOUS?</div>
                 <div class="normal fond1">
@@ -52,62 +51,74 @@
                     Cras quis ultricies massa. Quisque ornare lacus sed consequat elementum. Cras tempus faucibus augue. 
                     Duis lorem urna, euismod eu augue nec, suscipit ultrices neque. Ut sagittis erat at fermentum commodo.Vivamus 
                     quis quam consequat, euismod turpis sed, viverra arcu. Suspendisse rhoncus lectus sit amet scelerisque fringilla.
-                     Phasellus viverra, nisl at pharetra pretium, lacus elit luctus risus, at luctus lacus libero a diam.</br></br>
-                     Quisque sagittis tortor eu sem interdum, ut malesuada odio consequat. Donec eu magna a est tincidunt placerat 
-                     a vel ligula. Phasellus venenatis, magna vitae blandit feugiat, elit libero facilisis libero, sit amet bibendum 
-                     magna metus id lacus. Pellentesque pulvinar justo sit amet nunc laoreet, blandit consectetur dolor.
+                    Phasellus viverra, nisl at pharetra pretium, lacus elit luctus risus, at luctus lacus libero a diam.</br></br>
+                    Quisque sagittis tortor eu sem interdum, ut malesuada odio consequat. Donec eu magna a est tincidunt placerat 
+                    a vel ligula. Phasellus venenatis, magna vitae blandit feugiat, elit libero facilisis libero, sit amet bibendum 
+                    magna metus id lacus. Pellentesque pulvinar justo sit amet nunc laoreet, blandit consectetur dolor.
                 </div>
-        </div>
-        <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
                 <div class="gras fond2">AVORD</div>
                 <div class="gras fond2"></br></div>
                 <div class="fond2b"><img src={{asset('Pics/avord.jpg')}} height="150" width="400"/></div>
                 <div class="normal fond2">
-                    </br>Proin justo erat, egestas at vulputate et, pellentesque vitae lectus. Sed porttitor orci mi, et congue 
-                    tellus sagittis vel. Nunc in sapien eget nulla ornare auctor auctor ut sem. Vestibulum commodo libero eget 
-                    massa vulputate, a porta ante rutrum. Praesent nec consequat mi. In hac habitasse platea dictumst. Aliquam 
-                    condimentum a magna quis sollicitudin. Morbi accumsan quam et rhoncus tempor.</br></br>
-                    Sed sit amet enim auctor, luctus mauris eget, consectetur ipsum. In tristique, velit ac feugiat luctus,
-                    urna erat dapibus ex, id fringilla nunc nulla vitae erat. Ut ultrices nulla turpis, id viverra purus sagittis vel.
+                    </br>Située en bordure de la Départementale 976 à 22 km de Bourges, la préfecture 
+                    du Cher.</br></br>Son territoire d’une superficie de 2798 hectares, est constitué 
+                    tout entier par une grande plaine continue élevée et découverte très caractéristique 
+                    que l’on appelle « La Champagne Berrichonne ». Cette plaine est bordée au nord-est 
+                    par l’Yèvre, affluant du Cher, d’où le nom d’Avord (Av-eau-l’Yèvre), son sous-sol 
+                    est essentiellement calcaire.</br></br>Avord est séparée en deux par la voie ferrée 
+                    construite en 1845. La partie la plus ancienne est regroupée autour de l’église, 
+                    l’autre autour du camp militaire formé en 1872 devenu camp d’aviation en 1912 puis 
+                    base aérienne en 1927.
                 </div>
-        </div>
-        <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
                 <div class="gras fond3">NOS AMBITIONS</div>
                 <div class="normal fond3">
                     </br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum finibus nisl, vitae porttitor 
                     sem efficitur vel. Cras id dapibus lorem. Donec sed nulla imperdiet justo placerat fermentum sit amet vitae 
                     augue. Suspendisse eleifend ipsum magna, non finibus mauris dignissim consectetur. Sed laoreet nibh eget
-                     risus tempus, aliquet vestibulum quam molestie. Maecenas vitae mollis urna. Duis quam lectus, 
-                     faucibus quis enim eget, placerat laoreet neque. Ut pretium ex quis ex rutrum, sit amet aliquam 
-                     elit iaculis. Proin commodo lorem bibendum neque posuere fermentum.</br></br> Sed augue risus, sollicitudin
-                      eget scelerisque eget, eleifend sit amet enim. Vestibulum sit amet nisi vestibulum, porttitor tellus
-                       luctus, rhoncus metus.</br></br>Aliquam id lacinia dolor, in varius quam.</br></br>Proin sapien purus, 
-                       laoreet sed rutrum vitae, varius a dui. Maecenas vitae mollis urna. Maecenas vitae mollis urna.</br>
+                    risus tempus, aliquet vestibulum quam molestie. Maecenas vitae mollis urna. Duis quam lectus, 
+                    faucibus quis enim eget, placerat laoreet neque. Ut pretium ex quis ex rutrum, sit amet aliquam 
+                    elit iaculis. Proin commodo lorem bibendum neque posuere fermentum.</br></br> Sed augue risus, sollicitudin
+                    eget scelerisque eget, eleifend sit amet enim. Vestibulum sit amet nisi vestibulum, porttitor tellus
+                    luctus, rhoncus metus.</br></br>Aliquam id lacinia dolor, in varius quam.</br></br>Proin sapien purus, 
+                    laoreet sed rutrum vitae, varius a dui. Maecenas vitae mollis urna. Maecenas vitae mollis urna.</br>
                 </div>
+            </div>
         </div>
     </div>
 
-    <div class="bandeaubleu row">
-        <div class="col-sm-4">
-            <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
-        </div>
-        <div class="col-sm-4">
-            <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
-        </div>
-        <div class="col-sm-4">
-            Suivez-nous:  <a href="https://www.facebook.com/AnimAvord/"><img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+    <div class="container-fluid">
+        <div class="row bandeaubleu">
+            <div class="col">
+                <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
+            </div>
+            <div class="col">
+                <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
+            </div>
+            <div class="col">
+                Suivez-nous:  <a href="https://www.facebook.com/AnimAvord/"><img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+            </div>
         </div>
     </div>
-        
-    <ul class="nav bandeaubleu justify-content-sm-center">
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="/espace_presse">Espace presse</a></li>
-        <li class="nav-item"><a class="nav-link" href="/mentions_legales">Mentions légales</a></li>
-        <li class="nav-item"><a class="nav-link" href="/cgu">Conditions générales d'utilisation</a></li>
-        <li class="nav-item"><a class="nav-link" href="/pol_cookies">Politique cookies</a></li>
-        <li class="nav-item"><a class="nav-link" href="/gest_cookies">Gestion cookies</a></li>
-        <li class="nav-item"><a class="nav-link" href="/ppd">Politique de protection des données</a></li>
-    </ul>
 
-    <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
+    <div class="container-fluid">
+        <div class="row bandeaubleu">   
+            <ul class="nav justify-content-sm-center">
+                <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="/espace_presse">Espace presse</a></li>
+                <li class="nav-item"><a class="nav-link" href="/mentions_legales">Mentions légales</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cgu">Conditions générales d'utilisation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pol_cookies">Politique cookies</a></li>
+                <li class="nav-item"><a class="nav-link" href="/gest_cookies">Gestion cookies</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ppd">Politique de protection des données</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
+    </div>
 {% endblock %}

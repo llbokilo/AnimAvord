@@ -3,56 +3,73 @@
 {% block title %}Activités{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    <style>
+        .normal{font-size:18px;}
+        .bandeaubleu{background-color:lightblue;margin-left:auto;margin-right:auto;}
+        .fond1{display:flex;background-color:lightyellow;text-align:justify;}
+        .fond2{display:flex;background-color:lightgreen;text-align:justify;}
+        .fond2b{display:flex;background-color:lightgreen;text-align:justify;justify-content:space-around;}
+        .fond3{display:flex;background-color:lightgrey;text-align:justify;}
+        .gras{font-weight:bold;font-size:18px;}
+        .basdepage{font-weight:bold;text-align:center;font-size:20px;}
+    </style>
 
-    .body{background-color:white;}
-    .bandeau_bleu{background-color:lightblue;}
-    .arrange{display:flex;justify-content:space-around;align-items:center;}
-    .prez{display:flex;justify-content:space-around;}
-    .normal{font-size:18px;}
-    .fond1{display:flex;background-color:lightyellow;text-align:justify;}
-    .fond2{display:flex;background-color:lightgreen;text-align:justify;}
-    .fond2b{display:flex;background-color:lightgreen;text-align:justify;justify-content:space-around;}
-    .fond3{display:flex;background-color:lightgrey;text-align:justify;}
-    .gras{font-weight:bold;font-size:18px;}
-    .grassouligne{font-weight:bold;font-size:18px;text-animation:underline;}
-    .box{margin-right:500px;text-align:justify;}
-    .boxacceuil{width:450px;padding-bottom:20px;}
-    .grasgrand{font-weight:bold;font-size:30px;text-animation:underline;}
-    .basdepage{font-weight:bold;text-align:center;font-size:20px;}
-    .fondnoir{display:flex;justify-content:center;flex-direction:column;}
-</style>
+    <div class="body">
+        <div class="container-fluid">
+            <h1 class="bandeaubleu">
+                <ul class="nav justify-content-sm-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/activite/evenement">Evènements</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/activite/decoration">Décorations</a></li>
+                    <li class="nav-item"><img src={{asset('Pics/large.png')}} height="100" width="300"/></li>
+                    <li class="nav-item"><a class="nav-link" href="/activite/animation">Animations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/activite/spectacle">Spectacles</a></li>                   
+                    <li class="nav-item"><a class="nav-link" href="/admin">Administration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Déconnexion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Connexion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register">S'enregistrer</a></li>
+                </ul>
+            </h1>
+        </div>
 
-<div class="body">
-    <h1 class="arrange bandeau_bleu"><a href="/">Accueil</a><a href="/activite/evenement">Evènements</a><a href="/activite/decoration">Décorations</a> 
-            <img src={{asset('Pics/large.png')}} height="100" width="300"/> <a href="/activite/animation">Animations</a>
-            <a href="/activite/spectacle">Spectacles</a><a href="/connexion">Connexion</a>
-    </h1>
+        <div class="example-wrapper">
+            {% for activite in activiteList %}
+                <li>{{activite.titre}}
+                    <a href="/activite/evenement/{{activite.getId()}}"><button>Détails</button></a>
+                </li>
+            {% endfor %}
+        </div>
 
-    <div class="example-wrapper">
-        {% for activite in activiteList %}
-            <li>{{activite.titre}}
-                <a href="/activite/{{activite.getId()}}"><button>Détails</button></a>
-            </li>
-        {% endfor %}
-    </div>
-
-    <div class="bandeau_bleu">
-        <div  class="arrange">
-            <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
-            <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
-            <div class="gras arrange">Suivez-nous:<a href="https://www.facebook.com/AnimAvord/">
-                <img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+        <div class="container-fluid">
+            <div class="row bandeaubleu">
+                <div class="col">
+                    <a href="https://www.ville-avord.fr/"><img src={{asset('Pics/logo-Avord.png')}} height="100" width="350"/></a>
+                </div>
+                <div class="col">
+                    <img src={{asset('Pics/label.jpg')}}  height="100" width="200"/>
+                </div>
+                <div class="col">
+                    Suivez-nous:  <a href="https://www.facebook.com/AnimAvord/"><img src={{asset('Pics/fb.png')}} height="50" width="50"/></a>
+                </div>
             </div>
         </div>
-        <div class="arrange normal"><a href="/contact">Contact</a><a href="/espace_presse">Espace presse</a><a href="mentions_legales/">Mentions légales</a>
-            <a href="cgu/">Conditions générales d'utilisation</a><a href="pol_cookies/">Politique cookies</a>
-            <a href="/gest_cookies">Gestion cookies</a><a href="/ppd">Politique de protection des données</a>
+
+        <div class="container-fluid">
+            <div class="row bandeaubleu">   
+                <ul class="nav justify-content-sm-center">
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/espace_presse">Espace presse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/mentions_legales">Mentions légales</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cgu">Conditions générales d'utilisation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pol_cookies">Politique cookies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/gest_cookies">Gestion cookies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ppd">Politique de protection des données</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
         </div>
     </div>
-
-    <footer class="basdepage">@2021 - Tous droits réservés - Anim'Avord</footer>
-</div>
 {% endblock %}
