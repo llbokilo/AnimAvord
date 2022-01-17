@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Activités{% endblock %}
+{% block title %}Administration{% endblock %}
 
 {% block body %}
     <style>
@@ -18,25 +18,23 @@
         </h1>
     </div>
 
-    <div class="container-fluid">
-        <a href="/activite/create"><button>Créer une nouvelle activité</button></a>
-    </div>
 
     <div class="container-fluid">
-        <div class="row">
+        <h3 class="row text-center">
             <div class="col">
-                {% for activite in activiteList %}
-                    <li>{{activite.titre}}
-                        <a href="/activite/{{activite.getId()}}"><button>Détails</button></a>
-                        <a href="/activite/delete/{{activite.getId()}}"><button type="submit">Supprimer</button></a>
-                    </li>
-                {% endfor %}
+                <a href="/activite/list">Activités</a>
             </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <a href="/administration"><button>Retour</button></a>
+        </h3>
+        <h3 class="row text-center">
+            <div class="col">
+                <a href="/">Loterie</a
+            </div>
+        </h3>
+        <h3 class="row text-center">
+            <div class="col">
+                <a href="/utilisateur/list">Utilisateurs</a>
+            </div>
+        </h3>
     </div>
 
     <div class="container-fluid">
